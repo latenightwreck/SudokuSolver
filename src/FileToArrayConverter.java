@@ -2,18 +2,22 @@ import org.apache.commons.lang3.StringUtils;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.util.Arrays;
+
+import static constants.Constants.SIZE;
 
 public class FileToArrayConverter {
-
-    private static final int SIZE = 9;
 
     public int[][] convertFile(BufferedReader bufferedReader) throws IOException, Exception {
         String line;
         int [][] array = new int[SIZE][SIZE];
         int row = 0;
         while ((line = bufferedReader.readLine()) != null) {
+            //if there are too many rows in the file, throw error
+            if(row>=SIZE) {
+                throw new Exception("There are too many rows in the file for this array");
+            }
             String [] tokens = line.split("");
+            //if there are too many characters in a line (columns) throw error
             if (tokens.length>SIZE) {
                 throw new Exception("The length of the line is too long for the array");
             }
