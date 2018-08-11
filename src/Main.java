@@ -16,9 +16,12 @@ public class Main {
                     System.out.println("Sorry, please select a txt file!");
                     return;
                 } else {
-                    sudoku.printFile(bufferedReader);
+                    FileToArrayConverter converter = new FileToArrayConverter();
+                    sudoku.setBoard(converter.convertFile(bufferedReader));
                 }
             } catch (IOException ex) {
+                ex.printStackTrace();
+            } catch (Exception ex) {
                 ex.printStackTrace();
             }
 
