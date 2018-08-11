@@ -1,0 +1,12 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="SudokuPuzzle:jar">
+    <output-path>$PROJECT_DIR$/build/artifacts/SudokuPuzzle</output-path>
+    <properties id="ant-preprocessing">
+      <options enabled="true" />
+    </properties>
+    <root id="archive" name="SudokuPuzzle.jar">
+      <element id="module-output" name="SudokuPuzzle" />
+      <element id="library" level="project" name="commons-io:commons-io:2.6" />
+    </root>
+  </artifact>
+</component>

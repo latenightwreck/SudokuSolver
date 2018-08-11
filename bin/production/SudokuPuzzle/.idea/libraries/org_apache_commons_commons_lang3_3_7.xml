@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="org.apache.commons:commons-lang3:3.7" type="repository">
+    <properties maven-id="org.apache.commons:commons-lang3:3.7" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/commons-lang3-3.7.jar!/" />
+      <root url="file://$PROJECT_DIR$/lib" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/lib" recursive="false" />
+  </library>
+</component>
