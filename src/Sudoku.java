@@ -17,6 +17,17 @@ public class Sudoku {
                 '}';
     }
 
+    public String printBoard() {
+        StringBuilder builder = new StringBuilder();
+        for(int i = 0; i < board.length; i++) {
+            for(int j = 0; j < board.length; j++) {
+                builder.append(board[i][j]);
+            }
+            builder.append("\n");//append new line at the end of the row
+        }
+        return builder.toString();
+    }
+
     //if the number is in the row, return true, else, return false
     private boolean isInRow(int row, int number) {
         for (int i = 0; i < SIZE; i++) {
