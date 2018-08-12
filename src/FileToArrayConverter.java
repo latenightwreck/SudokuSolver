@@ -15,11 +15,13 @@ public class FileToArrayConverter {
         while ((line = bufferedReader.readLine()) != null) {
             //if there are too many rows in the file, throw error
             if(row>=SIZE) {
+                //Would throw a specific Exception
                 throw new Exception("There are too many rows in the file for this array");
             }
             String [] tokens = line.split("");
             //if there are too many characters in a line (columns) throw error
             if (tokens.length>SIZE) {
+                //Would throw a specific Exception
                 throw new Exception("The length of the line is too long for the array");
             }
             for (int i=0;i<tokens.length; i++) {
