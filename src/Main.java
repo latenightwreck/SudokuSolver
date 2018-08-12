@@ -1,5 +1,9 @@
 import org.apache.commons.io.FilenameUtils;
-import java.io.*;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class Main {
 
@@ -8,8 +12,6 @@ public class Main {
 
         File dir = new File("resources");
         for (File file : dir.listFiles()) {
-            Sudoku sudoku = new Sudoku();
-
             try (BufferedReader bufferedReader = new BufferedReader(new FileReader(file))) {
                 String selectedFilePath = file.getAbsolutePath();
                 if (!FilenameUtils.getExtension(selectedFilePath).equals("txt")) {
@@ -17,7 +19,12 @@ public class Main {
                     return;
                 } else {
                     FileToArrayConverter converter = new FileToArrayConverter();
-                    sudoku.setBoard(converter.convertFile(bufferedReader));
+                    Sudoku sudoku = new Sudoku(converter.convertFile(bufferedReader));
+                    if (sudoku.solve()) {
+                        System.out.println(sudoku.toString());
+                    } else {
+                        System.out.println("This puzzle is unsolvable! The file name is: "+file.getName());
+                    }
                 }
             } catch (IOException ex) {
                 ex.printStackTrace();
