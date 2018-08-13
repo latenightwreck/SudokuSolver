@@ -23,7 +23,11 @@ public class Sudoku {
             for(int j = 0; j < board.length; j++) {
                 builder.append(board[i][j]);
             }
-            builder.append("\n");//append new line at the end of the row
+            //if its not the last row, add a new line
+            //no need for extra new lines
+            if (i != board.length-1) {
+                builder.append("\n");
+            }
         }
         return builder.toString();
     }
