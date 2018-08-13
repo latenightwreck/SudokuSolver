@@ -10,6 +10,10 @@ public class Sudoku {
 
     private int[][] board;
 
+    public int[][] getBoard() {
+        return board;
+    }
+
     @Override
     public String toString() {
         return "Sudoku{" +
